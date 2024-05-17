@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Stadium Seat Booking</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .available {
+            background-color: lightgreen;
+        }
+        .booked {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h2>Cricket Stadium Seat Booking</h2>
+    <table>
+        <tr>
+            <th>Seat Number</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td class="available">Available</td>
+            <td><button onclick="bookSeat(1)">Book</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td class="available">Available</td>
+            <td><button onclick="bookSeat(2)">Book</button></td>
+        </tr>
+        <!-- Add more rows for more seats -->
+    </table>
+
+    <script>
+        function bookSeat(seatNumber) {
+            var seatStatus = document.querySelector('tr:nth-child(' + (seatNumber + 1) + ') .available');
+            seatStatus.innerHTML = 'Booked';
+            seatStatus.className = 'booked';
+        }
+    </script>
+</body>
+</html>
